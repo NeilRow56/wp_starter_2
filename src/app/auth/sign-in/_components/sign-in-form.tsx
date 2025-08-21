@@ -115,13 +115,15 @@ export const SignInForm = ({
                     href='/auth/forgot-password'
                     className='ml-auto text-sm text-blue-600 underline-offset-4 hover:underline'
                   >
-                    Forgot your password?
+                    <span className='dark:text-blue-300'>
+                      Forgot your password?
+                    </span>
                   </Link>
                 </div>
 
                 <Button
                   type='submit'
-                  className='w-full cursor-pointer'
+                  className='w-full cursor-pointer dark:bg-blue-600 dark:text-white'
                   disabled={isPending}
                 >
                   {isPending ? (
@@ -135,9 +137,9 @@ export const SignInForm = ({
                 Don&apos;t have an account?{' '}
                 <Link
                   href='/auth/sign-up'
-                  className='text-blue-600 underline underline-offset-4'
+                  className='drark:text-blue-300 text-blue-600 underline underline-offset-4'
                 >
-                  Sign up
+                  <span className='dark:text-blue-300'>Sign up</span>
                 </Link>
               </div>
             </form>

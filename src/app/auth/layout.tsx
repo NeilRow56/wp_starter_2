@@ -17,7 +17,7 @@ export default async function AuthLayout({
               variant: 'outline'
             })}
           >
-            <ArrowLeft /> Back
+            <ArrowLeft /> Home page
           </Link>
         </div>
         {children}
