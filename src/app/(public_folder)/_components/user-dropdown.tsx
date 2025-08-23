@@ -57,13 +57,13 @@ export function UserDropdown({ name, email, image }: iAppProps) {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link className='flex items-center' href='/courses'>
+            <Link className='flex items-center' href='/admin/clients'>
               <BookOpenIcon
                 size={16}
                 className='opacity-60'
                 aria-hidden='true'
               />
-              <span>Courses</span>
+              <span>Clients</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>

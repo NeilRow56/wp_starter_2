@@ -44,26 +44,27 @@ export function Navbar() {
         </Link>
         {/* Desktop navigation */}
         <nav className='hidden md:flex md:flex-1 md:items-center md:justify-between'>
-          <div className='flex items-center gap-2'>
-            {navigationItems.map(item => (
-              <Link
-                className='hover:text-primary text-sm font-medium transition-colors'
-                href={item.href}
-                key={item.href}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+          <div className='flex items-center gap-2'></div>
           <div className='flex items-center space-x-4'>
             <ModeToggle />
 
             {isPending ? null : session ? (
-              <UserDropdown
-                name={session.user.name}
-                email={session.user.email}
-                image={session.user.image || ''}
-              />
+              <>
+                {navigationItems.map(item => (
+                  <Link
+                    className='hover:text-primary text-sm font-medium text-blue-600 transition-colors'
+                    href={item.href}
+                    key={item.href}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <UserDropdown
+                  name={session.user.name}
+                  email={session.user.email}
+                  image={session.user.image || ''}
+                />
+              </>
             ) : (
               <>
                 <Button
@@ -71,7 +72,7 @@ export function Navbar() {
                   size='lg'
                   className='rounded-full bg-green-500 px-6 py-6 text-xl font-semibold text-white transition-all duration-200 hover:bg-green-500/70 md:px-8 md:py-2.5'
                 >
-                  <Link href='/auth/sign-in'>Join Now</Link>
+                  <Link href='/auth/sign-up'>Join Now</Link>
                 </Button>
                 <Link
                   href='/auth/sign-in'

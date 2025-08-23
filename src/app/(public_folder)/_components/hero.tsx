@@ -54,7 +54,7 @@ export default function HeroPage() {
                 Try for Free - full pricing schedule below
               </p>
             </div>
-            <div className='mt-4 hidden lg:block'>
+            <div className='mt-4 hidden 2xl:block'>
               <Image
                 className='rounded-lg'
                 src='/images/a.jpg'
@@ -67,12 +67,12 @@ export default function HeroPage() {
 
           {/* Image Content */}
 
-          <div className='hidden lg:block'>
+          <div className='hidden w-full lg:block'>
             <Image
               src='/images/hero.png'
               alt='Hero image'
-              width={700}
-              height={700}
+              width={925}
+              height={925}
             />
           </div>
         </div>

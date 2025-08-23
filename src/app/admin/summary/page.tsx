@@ -1,13 +1,12 @@
-import { ChartAreaInteractive } from '@/components/sidebar/chart-area-interactive'
-import { DataTable } from '@/components/sidebar/data-table'
-import { SectionCards } from '@/components/sidebar/section-cards'
-import data from './data.json'
-import { auth } from '@/lib/auth'
-import { headers } from 'next/headers'
-import { redirect } from 'next/navigation'
 import { ReturnButton } from '@/components/return-button'
 
-export default async function Page() {
+import { auth } from '@/lib/auth'
+
+import { headers } from 'next/headers'
+
+import { redirect } from 'next/navigation'
+
+export default async function AdminDashboardPage() {
   const headersList = await headers()
 
   const session = await auth.api.getSession({
@@ -24,19 +23,26 @@ export default async function Page() {
           <h1 className='text-3xl font-bold'>Admin Dashboard</h1>
 
           <p className='rounded-md bg-red-600 p-2 text-lg font-bold text-white'>
-            NOT AUTHORISED
+            FORBIDDEN
           </p>
         </div>
       </div>
     )
   }
+
   return (
-    <>
-      <SectionCards />
-      <div className='px-4 lg:px-6'>
-        <ChartAreaInteractive />
+    <div className='container mx-auto max-w-screen-lg space-y-8 px-8 py-16'>
+      <div className='space-y-4'>
+        <ReturnButton href='/profile' label='Profile' />
+
+        <h1 className='text-3xl font-bold'>Admin Dashboard</h1>
+
+        <p className='rounded-md bg-green-600 p-2 text-lg font-bold text-white'>
+          ACCESS GRANTED
+        </p>
       </div>
-      <DataTable data={data} />
-    </>
+
+      <div className='w-full overflow-x-auto'>Employee Table</div>
+    </div>
   )
 }
