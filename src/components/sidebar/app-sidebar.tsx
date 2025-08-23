@@ -126,7 +126,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className='data-[slot=sidebar-menu-button]:!p-1.5'
             >
-              <Link href='#'>
+              <Link href='/'>
                 <Image src='/logo.svg' alt='logo' width={32} height={32} />
                 <div className=''>
                   <span className='text-sm text-yellow-600'>Wp</span>
